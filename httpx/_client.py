@@ -1515,15 +1515,7 @@ class AsyncClient(BaseClient):
 
         [0]: /advanced/clients/#merging-of-configuration
         """
-
-        if cookies is not None:  # pragma: no cover
-            message = (
-                "Setting per-request cookies=<...> is being deprecated, because "
-                "the expected behaviour on cookie persistence is ambiguous. Set "
-                "cookies directly on the client instance instead."
-            )
-            warnings.warn(message, DeprecationWarning, stacklevel=2)
-
+        
         request = self.build_request(
             method=method,
             url=url,
